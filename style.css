@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.btn {
+  width: 80px;
+  height: 40px;
+  color: white;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  /* border: 1px solid white; */
+  display: flex;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px white;
+  cursor: pointer;
+  transition: all 1s;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: black;
+  transition: all 1s;
+  overflow: hidden;
+}
+.bubble {
+  width: 300px;
+  height: 300px;
+  background-image: linear-gradient(
+    45deg,
+    rgba(10, 227, 243, 0.301),
+    rgba(248, 248, 248, 0),
+    rgba(248, 248, 248, 0),
+    rgba(13, 243, 44, 0.349)
+  );
+  /* border: 0.5px solid green; */
+  border-radius: 50%;
+  animation: boom 2s linear infinite;
+  transform: translateX(-150px);
+}
+.bubble::before {
+  content: "";
+  position: absolute;
+  color: white;
+  width: 300px;
+  height: 300px;
+  background-image: linear-gradient(
+    135deg,
+    rgba(235, 10, 243, 0.301),
+    rgba(248, 248, 248, 0),
+    rgba(248, 248, 248, 0),
+    rgba(228, 243, 13, 0.349)
+  );
+  border-radius: 50%;
+  transform: translateX(300px);
+  animation-delay: 500ms;
+}
+.clock {
+  position: absolute;
+  width: 400px;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: 1px solid red;
+  border-radius: 30px;
+  box-shadow: inset 0px 0px 10px red, inset 0px 0px 20px rgb(218, 85, 85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: clock 2s linear infinite;
+  transition: all 1s;
+}
+span {
+  font-size: 70px;
+}
+
+@keyframes boom {
+  0% {
+    height: 300px;
+    width: 300px;
+  }
+  50% {
+    height: 250px;
+    width: 250px;
+  }
+  100% {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+@keyframes clock {
+  0% {
+    border: 1px solid red;
+    box-shadow: inset 0px 0px 10px red, inset 0px 0px 20px rgb(218, 85, 85);
+  }
+  50% {
+    border: 1px solid green;
+    box-shadow: inset 0px 0px 10px green, inset 0px 0px 20px rgb(116, 218, 85);
+  }
+  100% {
+    border: 1px solid red;
+    box-shadow: inset 0px 0px 10px red, inset 0px 0px 20px rgb(218, 85, 85);
+  }
+}
